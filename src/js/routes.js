@@ -1,9 +1,8 @@
-var React = require('react');
-var Route = require('react-router-dom').Route;
-var Link = require('react-router-dom').Link;
-var App = require('./components/App');
-var ServiceList = require('./components/ServiceList');
-var Service = require('./components/Service');
+import React from 'react';
+import {Route,Link} from 'react-router-dom';
+import App from './components/App';
+import ServiceList from './components/ServiceList';
+import Service from './components/Service';
 
 module.exports = (
 	<div>

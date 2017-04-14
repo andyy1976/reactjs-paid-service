@@ -1,12 +1,11 @@
-var React = require('react');
+import React,{Component} from 'react';
 
-var Service = React.createClass({
-	render: function(){
-		//console.log(this.props.match.params.id);
+class Service extends Component{
+	render(){
 		return (<div>
 			Service
 		</div>);
 	}
-});
+}
 
-module.exports = Service;
+export default Service;

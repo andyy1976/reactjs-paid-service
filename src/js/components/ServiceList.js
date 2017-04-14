@@ -1,11 +1,11 @@
-var React = require('react');
+import React,{Component} from 'react';
 
-var ServiceList = React.createClass({
-	render: function(){
+class ServiceList extends Component{
+	render(){
 		return (<div>
 			Service List
 		</div>);
 	}
-});
+}
 
-module.exports = ServiceList;
+export default ServiceList;

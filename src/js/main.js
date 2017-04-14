@@ -1,7 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Router = require('react-router-dom').BrowserRouter;
-var routes = require('./routes.js');
+import React from 'react';
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router} from 'react-router-dom';
+import routes from './routes.js';
 
 ReactDOM.render(<Router>{routes}</Router>, document.getElementById('app'));
 
