@@ -36,6 +36,7 @@ gulp.task('server', function() {
 		livereload: true,
 		port: 4321
 	});
+	gulp.watch('src/js/**/*.js',['browserify']);
 });
 
 gulp.task('default', ['browserify', 'copy','server'], function(){
