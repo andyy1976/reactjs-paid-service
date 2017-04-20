@@ -6,7 +6,6 @@ import Service from './components/Service';
 
 module.exports = (
 	<div>
-		<Link to="/service/1">Service</Link>
 		<Route exact path='/' component={ServiceList} />
 		<Route path='/service/:id' component={Service} />
 	</div>
