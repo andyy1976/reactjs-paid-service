@@ -13,6 +13,7 @@ class ServiceList extends Component{
 		}
 	}
 	render(){
+		console.log(this.state.services);
 		return (<div>
 			<Container>
 				<Header title="服务列表" />
