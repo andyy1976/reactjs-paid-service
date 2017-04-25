@@ -13,6 +13,9 @@ class AppStoreClass extends EventEmitter{
 	addChangeListener(cb){
 		this.on('change',cb);
 	}
+	removeChangeListener(cb){
+		this.removeChangeListener('change',cb);
+	}
 	getServices(){
 		return _services;
 	}

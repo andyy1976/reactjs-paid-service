@@ -17,9 +17,13 @@ class ServiceList extends Component{
 		this.state = getAppState();
 	}
 	componentDidMount(){
-		AppStore.addChangeListener('here',this._onChange.bind(this));
+		AppStore.addChangeListener(this._onChange.bind(this));
+	}
+	componentUnmount(){
+		AppStore.removeChangeListener(this._onChange);
 	}
 	render(){
+		//console.log(this.state.services);
 		return (<div>
 			<Container>
 				<Header title="服务列表" />
