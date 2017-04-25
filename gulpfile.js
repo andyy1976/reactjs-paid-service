@@ -28,6 +28,8 @@ gulp.task('copy', function(){
 		.pipe(gulp.dest('dist/css'));
 	gulp.src('src/js/vendors/*.*')
 		.pipe(gulp.dest('dist/js'));
+	gulp.src('src/data/*')
+		.pipe(gulp.dest('dist/data'));
 });
 
 gulp.task('server', function() {
