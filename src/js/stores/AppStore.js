@@ -4,10 +4,16 @@ import {EventEmitter} from 'events';
 import Api from '../utils/AppAPI.js';
 
 const CHANGE_EVENT = 'change';
-let _services = [];
+var _services = [];
 
 class AppStoreClass extends EventEmitter{
-	getService(){
+	emitChange(){
+		this.emit(CHANGE_EVENT);
+	}
+	addChangeListener(cb){
+		this.on('change',cb);
+	}
+	getServices(){
 		return _services;
 	}
 	setServices(services){
@@ -21,7 +27,7 @@ AppDispatcher.register((payload)=>{
 	const action = payload.action;
 	switch(action.actionType){
 		case AppConstants.RECV_SERVICES:
-			console.log('recving services...');
+			//console.log('recving services...',action.services);
 			AppStore.setServices(action.services);
 			AppStore.emit(CHANGE_EVENT);
 		break;

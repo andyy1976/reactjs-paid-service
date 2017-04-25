@@ -5,20 +5,29 @@ import {
 	Container 
 } from 'amazeui-touch';
 
+function getAppState(){
+	return {
+		services: AppStore.getServices()
+	}
+}
+
 class ServiceList extends Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			services: AppStore.getService()
-		}
+		this.state = getAppState();
+	}
+	componentDidMount(){
+		AppStore.addChangeListener('here',this._onChange.bind(this));
 	}
 	render(){
-		console.log(this.state.services);
 		return (<div>
 			<Container>
 				<Header title="服务列表" />
 			</Container>
 		</div>);
+	}
+	_onChange(){
+		this.setState(getAppState());
 	}
 }
 

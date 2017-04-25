@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import AppAPI from '../utils/AppAPI.js';
 import AppStore from '../stores/AppStore';
 
-AppAPI.recvServices();
+//AppAPI.recvServices();
 
 class App extends Component{
 	render(){
