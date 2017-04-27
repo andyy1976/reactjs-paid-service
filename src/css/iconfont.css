@@ -1,0 +1,13 @@
+.item-icon {
+  color: rgba(136, 136, 136, 0.45);
+  font-size: 1.25rem;
+}
+
+.icon-pipe:before { content: "\e622"; }
+.icon-pipe{ color: #00e0b3; }
+
+.icon-water-tap:before { content: "\e62d"; }
+.icon-water-tap{ color: #00e0b3; }
+
+.icon-right-nav:before { content: "\e623"; }
+
