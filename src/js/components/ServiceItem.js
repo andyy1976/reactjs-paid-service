@@ -13,6 +13,7 @@ class ServiceItem extends Component{
 		console.log(this.state);
 		return (<div>
 			<List.Item 
+				media={<Icon name={this.state.icon} />}
 				title={this.state.name}
 				subTitle={this.state.desc}
 				after={'¥'+this.state.price}
