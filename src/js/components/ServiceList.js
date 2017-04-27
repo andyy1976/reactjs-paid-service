@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import AppStore from '../stores/AppStore';
-import Header from './Header';
+import Header from './Header.js';
+import ServiceGroup from './ServiceGroup.js';
 import {
 	Container 
 } from 'amazeui-touch';
@@ -23,10 +24,15 @@ class ServiceList extends Component{
 		AppStore.removeChangeListener(this._onChange);
 	}
 	render(){
-		//console.log(this.state.services);
+		console.log(this.state.services);
 		return (<div>
 			<Container>
 				<Header title="服务列表" />
+				{
+					this.state.services.map((grp,idx)=>{
+						return <ServiceGroup group={grp} key={idx} />
+					})
+				}
 			</Container>
 		</div>);
 	}
