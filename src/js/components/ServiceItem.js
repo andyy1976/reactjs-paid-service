@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import {
 	List,
 	Icon
@@ -12,14 +13,15 @@ class ServiceItem extends Component{
 	render(){
 		console.log(this.state);
 		return (<div>
-			<List.Item 
-				media={<Icon name={this.state.icon} />}
-				title={this.state.name}
-				subTitle={this.state.desc}
-				after={'¥'+this.state.price}
-				href={'/#/service/'+this.state.id}
-				key={this.state.id}
-			/>
+			<Link to={'/service/'+this.state.id}>
+				<List.Item 
+					media={<Icon name={this.state.icon} />}
+					title={this.state.name}
+					subTitle={this.state.desc}
+					after={'¥'+this.state.price}
+					key={this.state.id}
+				/>
+			</Link>
 		</div>);
 	}
 }
