@@ -16,15 +16,15 @@ class ServiceList extends Component{
 	constructor(props){
 		super(props);
 		this.state = getAppState();
+		this.onChange = this._onChange.bind(this);
 	}
 	componentDidMount(){
-		AppStore.addChangeListener(this._onChange.bind(this));
+		AppStore.addChangeListener(this.onChange);
 	}
-	componentUnmount(){
-		AppStore.removeChangeListener(this._onChange);
+	componentWillUnmount(){
+		AppStore.removeChangeListener(this.onChange);
 	}
 	render(){
-		console.log(this.state.services);
 		return (<div>
 			<Container>
 				<Header title="服务列表" />
@@ -37,7 +37,8 @@ class ServiceList extends Component{
 		</div>);
 	}
 	_onChange(){
-		this.setState(getAppState());
+		let state = getAppState();
+		this.setState(state);
 	}
 }
 

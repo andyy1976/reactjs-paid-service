@@ -4,17 +4,30 @@ import Header from './Header.js';
 import {
 	Container 
 } from 'amazeui-touch';
+import AppAPI from '../utils/AppAPI.js';
 
-function getServiceDetail(props){
-	let id = props.match.params.id;
-	console.log('id',id);
-	return {};
+function getAppState(){
+	return {
+		service: AppStore.getService()
+	}
 }
+
+let id;
 
 class Service extends Component{
 	constructor(props){
 		super(props);
-		this.state = getServiceDetail(props);
+		id = props.match.params.id;
+		this.onChange = this._onChange.bind(this);
+	}
+	componentWillMount(){
+		AppAPI.getService(id);
+	}
+	componentDidMount(){
+		AppStore.addChangeListener(this.onChange);
+	}
+	componentWillUnmount(){
+		AppStore.removeChangeListener(this.onChange);
 	}
 	render(){
 		return (<div>
@@ -22,6 +35,10 @@ class Service extends Component{
 				<Header title="物业服务" back="true" />
 			</Container>
 		</div>);
+	}
+	_onChange(){
+		let state = getAppState();
+		this.setState(state);
 	}
 }
 
