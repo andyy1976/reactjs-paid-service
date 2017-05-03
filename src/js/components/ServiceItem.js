@@ -11,7 +11,6 @@ class ServiceItem extends Component{
 		this.state = props.item;
 	}
 	render(){
-		console.log(this.state);
 		return (<div>
 			<Link to={'/service/'+this.state.id}>
 				<List.Item 
