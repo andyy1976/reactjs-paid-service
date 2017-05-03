@@ -8,6 +8,12 @@ class AppActionsClass{
 			services: services
 		});
 	}
+	recvService(service){
+		AppDispatcher.handleViewAction({
+			actionType: AppConstants.RECV_SERVICE,
+			service: service
+		});
+	}
 };
 
 const AppActions = new AppActionsClass();
