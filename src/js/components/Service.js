@@ -81,6 +81,7 @@ class Service extends Component{
 			        		<Field 
 			        			label="需求"
 			        			type="textarea"
+			        			placeholder="请填写您的要求或说明"
 			        		/>
 			        	</List.Item>
 			        	<List.Item
